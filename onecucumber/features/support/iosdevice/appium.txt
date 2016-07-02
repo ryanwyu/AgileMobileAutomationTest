@@ -1,0 +1,8 @@
+[caps]
+platformName = "iOS"
+deviceName = "iPhone 6s"
+platformVersion = "9.3"
+sendKeyStrategy = "grouped"
+waitForAppScript = "true"
+udid = "631c94bdedb64fc8171381bf2a668b95b1188721"
+bundleId = "book.qq.com.writer"
