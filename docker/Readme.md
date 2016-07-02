@@ -4,31 +4,31 @@
 这个Docker镜像适用于AMAT框架。它安装了Cucumber测试框架以及Appiumlib库。使用AMAT的测试人员可以通过启动这个容器快速和Appium服务器建立连接并远程运行cucubmer测试。
 这可以使测试人员非常方便地开始移动应用测试工作，而不需要在环境设置上花费太多的时间。
 
-### 获取镜像
+## 获取镜像
 
- 有两种方式获取这个镜像:
+有两种方式获取这个镜像:
 
-* 从远程镜像库中下载镜像文件
+#### 1. 从远程镜像库中下载镜像文件
 ```
 user@local-machine:~/workspace/OneCucumber$ sudo docker pull lannyzhujin/ruby_appiumlib_and_cucumber:0.2
 ```
 镜像下载完成之后可以直接用于启动容器
 
-* 或者通过Docker在本地构建镜像
+#### 2. 或者通过Docker在本地构建镜像
 ````
 user@local-machine:~$git clone https://github.com/lannyzhujin/Docker-appiumlib-and-cucumber.git
 user@local-machine:~$sudo docker build -t lannyzhujin/ruby_appiumlib_and_cucumber:0.2 .
 ````
 Dockerfile不能直接使用, 下载之后需要使用build命令构建镜像, 镜像才能用于启动容器
 
-### 启动容器
+## 启动容器
 启动容器就是在本地宿主机器上运行了一个类似虚拟机的程序, 这个程序本身就是一个操作系统, 容器和本地宿主机之间可以很方便的通信, 操作维护非常方便,不需要退出宿主机操作系统
 
-* 启动OneCucumber™客户端并执行测试
+#### 启动OneCucumber™客户端并执行测试
 ```
 user@local-machine:~/workspace/OneCucumber$ sudo docker run -it --rm --name test  -v /home/lanny/workspace/OneCucumber/:/home/workspace/OneCucumber lannyzhujin/ruby_appiumlib_and_cucumber:0.2  cucumber -p "iphone6p-9_0" "features/client.feature"
 ```
-* 启动容器并进入到容器系统的命令行终端模式, 在容器内进行操作
+#### 启动容器并进入到容器系统的命令行终端模式, 在容器内进行操作
 ```
 user@local-machine:~/workspace/OneCucumber$sudo docker run -it --rm --name test -v /home/lanny/workspace/OneCucumber/:/home/workspace/OneCucumber lannyzhujin/ruby_appiumlib_and_cucumber:0.2 bash
 ```
