@@ -63,6 +63,10 @@ class MobileAdapter
   # Other testability functions
   ################################
 
+  def get_name(locator)
+    return ""
+  end
+
   def get_location(locator)
 
   end

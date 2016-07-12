@@ -14,13 +14,19 @@ require 'selenium-webdriver'
 
 end
 
-当(/^进入"([^"]*)"的章节列表页面$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+当(/^进入"(.*?)"的章节列表页面$/) do |tabname|
+  $mobile.tap("//UIAButton[@name='写作']")
+  $mobile.tap("//UIAStaticText[@name='#{tabname}']")
 
 end
 
-当(/^选择"([^"]*)"进行删除操作$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+当(/^选择"(.*?)"章节进行删除操作$/) do |chapter|
+  ##选择需要删除的页面,进入章节详情页
+  $mobile.tap("//UIATableCell/UIAStaticText[@label='#{chapter}']")
+  #点击"删除"按钮进行删除, 弹出提示框
+  $mobile.tap("//UIAButton[@label='icon write delete']")
+  #选择删除或者取消
+  #$mobile.tap("//UIACollectionCell/UIAButton[@label='取消']")
 end
 
 那么(/^"([^"]*)"就会在草稿箱章节列表里消失$/) do |arg1|

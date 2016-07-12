@@ -1,6 +1,6 @@
 [caps]
 platformName = "iOS"
-deviceName = "iPad"
+deviceName = "iPad 2"
 platformVersion = "8.4"
 sendKeyStrategy = "grouped"
 waitForAppScript = "true"

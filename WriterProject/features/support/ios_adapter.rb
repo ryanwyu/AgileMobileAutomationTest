@@ -52,8 +52,8 @@ class IosAdapter < MobileAdapter
   # Other testability functions
   ################################
 
-  def element?(locator)
-    return find_element(:xpath, locator)
+  def get_name(locator)
+    find_element(:xpath, locator).name
   end
 
   def rescue_exceptions
