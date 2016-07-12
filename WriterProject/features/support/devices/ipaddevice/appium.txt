@@ -1,0 +1,8 @@
+[caps]
+platformName = "iOS"
+deviceName = "iPad"
+platformVersion = "8.4"
+sendKeyStrategy = "grouped"
+waitForAppScript = "true"
+udid = "af760966cf40ae5b9a7ef66149c0180bbe8624fd"
+bundleId = "book.qq.com.writer"

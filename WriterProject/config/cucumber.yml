@@ -1,0 +1,9 @@
+# config/cucumber.yml
+##YAML Template
+---
+hongmi:  IDEVICENAME='hongmi'
+nubia:  IDEVICENAME='nubia'
+iosdevice: IDEVICENAME='iosdevice'
+iossimulator: IDEVICENAME='iossimulator'
+dummy: IDEVICENAME='dummy' DBHOST='127.0.0.1' --tags @debug
+jenkins: --tags @bvt --format json --out=./reports/features_report.json IDEVICENAME='dummy'

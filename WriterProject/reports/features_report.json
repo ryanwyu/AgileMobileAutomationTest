@@ -1,0 +1,152 @@
+[
+  {
+    "uri": "features/story_delete_draft.feature",
+    "id": "删除文章内容到回收站功能",
+    "keyword": "功能",
+    "name": "删除文章内容到回收站功能",
+    "description": "  作为一个作家助手客户端用户\n  可以删除已在服务端同步的章节至删回收站内\n  从而可以恢复已删内容",
+    "line": 3,
+    "elements": [
+      {
+        "id": "删除文章内容到回收站功能;作家\"xxxx\"删除一个草稿章节至回收站",
+        "keyword": "场景",
+        "name": "作家\"xxxx\"删除一个草稿章节至回收站",
+        "description": "",
+        "line": 9,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@debug",
+            "line": 8
+          },
+          {
+            "name": "@bvt",
+            "line": 8
+          },
+          {
+            "name": "@agile",
+            "line": 8
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/env.rb:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 140410
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "假设",
+            "name": "首次打开作家助手APP",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/login_test.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28140
+            }
+          },
+          {
+            "keyword": "并且",
+            "name": "作家\"xxxx\"已经保存过一个草稿章节",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/writer_app_function.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20173
+            }
+          },
+          {
+            "keyword": "并且",
+            "name": "用户选择以\"起点作家\"方式登录",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/login_test.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13281
+            }
+          },
+          {
+            "keyword": "当",
+            "name": "以用户名\"2120620042\"和登录密码\"chuangshiceshi555\"登录",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/login_test.rb:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26302
+            }
+          },
+          {
+            "keyword": "并且",
+            "name": "进入\"xxx书籍\"的章节列表页面",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/writer_app_function.rb:17"
+            },
+            "result": {
+              "status": "pending",
+              "error_message": "TODO (Cucumber::Pending)\n./features/step_definitions/writer_app_function.rb:18:in `/^进入\"([^\"]*)\"的章节列表页面$/'\nfeatures/story_delete_draft.feature:15:in `并且进入\"xxx书籍\"的章节列表页面'",
+              "duration": 104346
+            }
+          },
+          {
+            "keyword": "并且",
+            "name": "选择\"某个章节\"进行删除操作",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/writer_app_function.rb:21"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "那么",
+            "name": "\"某个章节\"就会在草稿箱章节列表里消失",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/writer_app_function.rb:25"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "并且",
+            "name": "在回收站页列表面里出现\"某个章节\"名称项",
+            "line": 18,
+            "match": {
+              "location": "features/step_definitions/writer_app_function.rb:29"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/env.rb:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 85200
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
