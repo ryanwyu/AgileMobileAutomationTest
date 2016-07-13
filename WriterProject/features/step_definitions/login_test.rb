@@ -14,15 +14,30 @@ def logout
   $mobile.tap("//UIACollectionCell/UIAButton[@label='退出']")
 end
 
-假设(/^首次打开作家助手APP$/) do
+def login(username, password)
+  $mobile.text_input_xpath("//UIATextField[@name='']", username)
+  $mobile.text_input_xpath("//UIASecureTextField[1]", password)
+  $mobile.button_click_xpath("//UIAButton[2]")
+
+end
+
+假设(/^(.*?)打开作家助手APP$/) do |time|
 
   $mobile.start_app
 
+  #r首次安装的程序需要处理
+  #puts time
+  #$mobile.exist?("//UIAImage[@name='guideBackground.png']")
   #如果App打开时处于登录状态, 先执行退出操作
-  title = $mobile.get_name("//UIANavigationBar/UIAStaticText[2]")
-  if not title.match('登录')
-    logout
-  end
+  #title = $mobile.get_name("//UIANavigationBar/UIAStaticText[2]")
+  #puts "title is #{title}\\n"
+  #if (not title.match('登录')) && $mobile.exist?("//UIAButton[@label='我']")
+  #  puts "is in login"
+  #  logout
+  #elsif time == "首次" # && $mobile.exist?("//UIAImage[@name='guideBackground.png']")
+  #  puts "in guide pages"
+    $mobile.skip_guide(1)
+  #end
 
 end
 
@@ -44,10 +59,7 @@ end
 end
 
 当(/^以用户名"(.*?)"和登录密码"(.*?)"登录$/) do |username, password|
-
-  $mobile.text_input_xpath("//UIATextField[@name='']", username)
-  $mobile.text_input_xpath("//UIASecureTextField[1]", password)
-  $mobile.button_click_xpath("//UIAButton[2]")
+  login(username, password)
 end
 
 那么(/^登录"(.*?)"并进入到"(.*?)"页面$/) do |loginstatus, nextpage|

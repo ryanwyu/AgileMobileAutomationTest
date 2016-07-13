@@ -17,6 +17,7 @@ class IosAdapter < MobileAdapter
   def start_app
     # Make sure you have started appium server
     current_context = "WEBVIEW_1"
+    puts "App started!"
   end
 
   ################################
@@ -53,7 +54,36 @@ class IosAdapter < MobileAdapter
   ################################
 
   def get_name(locator)
-    find_element(:xpath, locator).name
+    begin
+      element = find_element(:xpath, locator)
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      return "not found for #{locator} in get_name"
+    end
+    element.name
+  end
+
+  def exist?(locator)
+    element = nil
+    begin
+      element = find_element(:xpath, locator)
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      puts "not found #{locator}"
+      return nil
+    end
+    puts "#{element.class} element found by #{locator}"
+    return element
+  end
+
+  def skip_guide(guides)
+    window = find_element(:xpath, "//UIAWindow[1]")
+    w = window.size.width
+    h = window.size.height
+
+    guides.times {
+      puts "#{w}, #{h}"
+      swipe :start_x => w*4/5, :start_y => h*4/5, :end_x => w*1/5, :end_y => h*1/5, :touchCount => 1, :duration => 10000
+    }
+
   end
 
   def rescue_exceptions

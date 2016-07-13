@@ -71,6 +71,14 @@ class MobileAdapter
 
   end
 
+  def exist? (locator)
+
+  end
+
+  #针对首次启动的引导页进行操作
+  def skip_guide(times)
+  end
+
 
 
   def rescue_exceptions

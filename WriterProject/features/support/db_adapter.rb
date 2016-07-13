@@ -1,5 +1,5 @@
 #encoding: utf-8
-require 'mysql'
+#require 'mysql'
 
 class DBAdapter
   attr_accessor :db

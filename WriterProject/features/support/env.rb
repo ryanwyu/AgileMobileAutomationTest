@@ -9,14 +9,15 @@ require 'appium_lib'
 require 'cucumber/ast'
 require 'rubygems'
 require 'selenium-webdriver'
-require 'mysql'
+#require 'mysql'
 #require '/Users/yourusername/workspace/MobileAutomation/mobileautomation/AppGap/features/step_definitions/ios_simulator'
 
 MAX_SLEEP_SECS = 30
 MAXWAITSECONDS = 30
 ORACLE_ADDRESS = '//your.oracle.db.domain.name.com:1521/your-db-name'
 
-server_url = "http://appium.server.host:4723/wd/hub"
+#server_url = "http://appium.server.host:4723/wd/hub"
+server_url = "http://171.19.248.177:4724/wd/hub"
 
 # Create a custom World class so we don't pollute `Object` with Appium methods
 class AppiumWorld
